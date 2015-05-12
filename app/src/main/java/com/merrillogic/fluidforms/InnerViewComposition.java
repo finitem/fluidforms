@@ -2,24 +2,35 @@ package com.merrillogic.fluidforms;
 
 import android.view.View;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
 /**
  *
  */
 public abstract class InnerViewComposition {
 
 	private View mRootView;
+	@InjectView(R.id.edit_container)
 	protected View mEditView;
+	@InjectView(R.id.review_container)
 	protected View mReviewView;
 
 	public InnerViewComposition(View rootView) {
 		mRootView = rootView;
-		mEditView = mRootView.findViewById(R.id.edit_container);
-		mReviewView = mRootView.findViewById(R.id.review_container);
+		ButterKnife.inject(this, rootView);
 	}
 
-	public abstract void bind(Object dataItem);
+	public abstract void bind(InputItem dataItem);
 
-	//animateToEdit;
+	public abstract void unbind();
 
-	//animateToStatic;
+	public abstract void startEdit();
+
+	public abstract void jumpToEdit();
+
+	public abstract void finishEdit();
+
+	public abstract void jumpToReview();
+
 }

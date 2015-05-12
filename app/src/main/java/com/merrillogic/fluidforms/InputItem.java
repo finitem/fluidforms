@@ -4,6 +4,10 @@ package com.merrillogic.fluidforms;
  *
  */
 public class InputItem<T> {
+	public boolean isValid() {
+		return data != null;
+	}
+
 	public enum InputType {
 		TEXT,
 		PICKER,

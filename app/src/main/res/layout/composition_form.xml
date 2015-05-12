@@ -38,6 +38,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:text="@string/Submit"
         tools:text="Submit"/>
 
 </RelativeLayout>
